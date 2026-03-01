@@ -71,7 +71,6 @@ Pygments
 PySocks
 python-dateutil
 python-json-logger
-pywin32
 pywinpty
 PyYAML
 pyzmq
