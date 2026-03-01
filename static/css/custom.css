@@ -1,0 +1,363 @@
+/* ==================================================
+   Root & Global
+================================================== */
+:root {
+    --mint: #B2DDE3;
+    --mint-dark: #4c9da8;
+    --btn-primary: rgb(20, 24, 27);
+    --bs-body-font-family: 'Pretendard', 'Roboto', sans-serif;
+}
+
+
+/* ==================================================
+   Layout - Header / Footer
+================================================== */
+.top-bar {
+    background-color: var(--mint);
+    color: black;
+    font-weight: 500;
+    font-size: clamp(11px, 1.2vw, 13px);
+    letter-spacing: 0.03em;
+}
+
+.logo-area {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.lab-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 40px);
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    background-color: #ebf6f8;
+    font-size: clamp(11px, 1.2vw, 13px);
+}
+
+
+/* ==================================================
+   Utility (Mobile Break Control)
+================================================== */
+.mobile-break { display: none; }
+.mobile-delete { display: block; }
+
+
+/* ==================================================
+   Navigation
+================================================== */
+.desktop-menu {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.desktop-menu .nav-item {
+    margin: 0 15px;
+}
+
+.nav-item.dropdown > .dropdown-toggle::after {
+    display: none;
+}
+
+.nav-link,
+.dropdown-item {
+    color: black !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.dropdown-item:hover {
+    color: var(--mint-dark) !important;
+    background-color: #f4f4f4;
+}
+
+.mobile-toggle {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+}
+
+
+/* ==================================================
+   Projects App
+================================================== */
+.project-title {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.description-text {
+    font-size: clamp(0.9rem, 1.1vw, 1.3rem);
+    text-align: justify;
+    word-break: keep-all;
+    white-space: pre-wrap;
+    line-height: 1.8;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    border-color: white;
+    color: white;
+    font-size: clamp(12px, 1.5vw, 15px);
+}
+
+.btn-primary:hover {
+    background-color: var(--mint-dark);
+    border-color: white;
+    color: white;
+}
+
+
+/* ==================================================
+   People App
+================================================== */
+.member-section {
+    margin: 60px 0;
+}
+
+/* photo wrapper */
+.photo-wrapper,
+.member-photo-wrapper,
+.director-photo-wrapper {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.photo-wrapper { width: 260px; }
+.member-photo-wrapper { width: 100%; max-width: 200px; }
+.director-photo-wrapper { width: 180px; }
+
+.photo-wrapper img,
+.member-photo-wrapper img,
+.director-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name,
+.director-name {
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.director-title {
+    font-size: clamp(15px, 1.5vw, 18px);
+    margin-bottom: 4px;
+}
+
+.degree-title {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.introduction-text {
+    font-size: clamp(0.9rem, 1.1vw, 1.3rem);
+    word-break: keep-all;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.member-divider {
+    margin: 0 auto 2.5rem auto;
+}
+
+/* ==================================================
+   Board App
+================================================== */
+.board-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.board-text {
+    font-size: clamp(0.8rem, 1.1vw, 1.3rem);
+}
+
+.search-input,
+.board-btn {
+    height: 38px;
+    font-size: 0.85rem;
+}
+
+.board-btn {
+    background-color: var(--btn-primary);
+    border-color: var(--btn-primary);
+    padding: 0.2em 0.7em;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+}
+
+.board-btn:hover {
+    background-color: var(--mint-dark);
+    border-color: var(--mint-dark);
+}
+
+
+/* ==================================================
+   Notice Detail & CKEditor
+================================================== */
+.notice-detail-wrapper {
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.notice-content {
+    line-height: 1.6;
+    font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+    word-break: keep-all;
+}
+
+.notice-content a {
+    word-break: break-all;
+}
+
+/* Float Clear */
+.notice-content::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* CKEditor Image */
+.notice-content figure {
+    display: block;
+    margin: 1.5rem auto;
+    clear: both;
+}
+
+.notice-content figure img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto;
+}
+
+.attachment-area {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.attachment-area a {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+
+/* ==================================================
+   Pagination
+================================================== */
+.pagination .page-link {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    background-color: var(--btn-primary);
+    color: #fff;
+    border: 1px solid var(--btn-primary);
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--mint-dark);
+    border-color: var(--mint-dark);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--mint-dark);
+    border-color: var(--mint-dark);
+}
+
+
+/* ==================================================
+   Media Queries
+================================================== */
+
+/* Desktop Hover Dropdown */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/* PC Notice Image Align */
+@media (min-width: 769px) {
+    .notice-content .image-style-align-left,
+    .notice-content figure.align-left {
+        float: left;
+        margin-right: 1.5rem;
+        max-width: 50%;
+    }
+
+    .notice-content .image-style-align-right,
+    .notice-content figure.align-right {
+        float: right;
+        margin-left: 1.5rem;
+        max-width: 50%;
+    }
+
+    .notice-content .image-style-align-center,
+    .notice-content figure.align-center {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .mobile-break { display: block; }
+    .mobile-delete { display: none; }
+
+    .photo-wrapper { width: 180px; }
+    .member-photo-wrapper { width: 160px; }
+
+    .search-input,
+    .board-btn,
+    .pagination .page-link {
+        height: 30px;
+        font-size: 0.75rem;
+    }
+
+    .board-btn {
+        padding: 0.2em 0.5em;
+    }
+
+    /* Hide board columns */
+    .board-text th:nth-child(3),
+    .board-text th:nth-child(4),
+    .board-text td:nth-child(3),
+    .board-text td:nth-child(4) {
+        display: none;
+    }
+
+    /* Notice images full width */
+    .notice-content figure,
+    .notice-content .image-style-align-left,
+    .notice-content .image-style-align-right,
+    .notice-content .image-style-align-center {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .notice-content figure img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

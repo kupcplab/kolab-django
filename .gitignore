@@ -14,7 +14,8 @@ cloudworld/
 local_settinggs.py
 db.sqlite3
 db.sqlite3-journal
-static/
+/staticfiles/
+/static_root/
 media/
 
 # Environment variables
