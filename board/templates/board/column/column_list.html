@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-4 py-md-5 board-wrapper">
+
+    <br class="mobile-delete">
+
+    <!-- page title -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Columns
+        </h2>
+    </div>
+
+    <!-- search -->
+    <div class="row mb-2">
+        <div class="col-md-4 ms-auto">
+            <form method="get" class="d-flex">
+                <input type="text" name="q"
+                       value="{{ query }}"
+                       class="form-control me-2 search-input"
+                       placeholder="검색어 입력">
+                <button class="btn btn-dark board-btn">검색</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- column table -->
+    <table class="table table-hover align-middle text-center board-text">
+        <thead class="table-light text-center">
+            <tr>
+                <th style="width:10%;">번호</th>
+                <th style="width:45%;">제목</th>
+                <th style="width:15%;">날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in numbered_columns %}
+            <tr onclick="window.open('{{ item.column.url }}', '_blank')" style="cursor:pointer;">
+                <td>
+                    {% if item.column.is_important %}
+                        <span class="text-danger fw-bold">📌</span>
+                    {% else %}
+                        {{ item.num }}
+                    {% endif %}
+                </td>
+                <td class="text-start">
+                    <a href="{{ item.column.url }}"
+                        class="text-decoration-none text-dark fw-semibold"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            {{ item.column.title }}
+                    </a>
+                </td>
+                <td>{{ item.column.created_at|date:"Y-m-d" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="py-5 text-muted">
+                    {% if query %}
+                        "{{ query }}"에 대한 검색 결과가 없습니다.
+                    {% else %}
+                        등록된 칼럼이 없습니다.
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- list button -->
+    {% if query %}
+    <div class="text-end">
+        {% url 'board:column_list' as column_list_url %}
+        <button class="btn btn-dark board-btn" onclick="location.href='{{ column_list_url }}'">
+            목록
+        </button>
+    </div>
+    {% endif %}
+
+    <!-- pagination -->
+    <nav>
+        <ul class="pagination justify-content-center mt-5">
+
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page=1&q={{ query }}">«</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page={{ page_obj.previous_page_number }}&q={{ query }}">‹</a>
+            </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?page={{ num }}&q={{ query }}">{{ num }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page={{ page_obj.next_page_number }}&q={{ query }}">›</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page={{ page_obj.paginator.num_pages }}&q={{ query }}">»</a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+</div>
+
+{% endblock %}
+

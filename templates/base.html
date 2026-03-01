@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Positive Clinical Psychology Lab</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<div class="top-bar text-center py-2">
+    고려대학교 긍정임상심리 연구실에 오신 것을 환영합니다!
+</div>
+
+<!-- ===== 로고 영역 ===== -->
+<div class="position-relative">
+    <button class="btn d-lg-none mobile-toggle" type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu">
+        ☰
+    </button>
+
+    <div class="logo-area">
+        <h1 class="lab-title">
+            Positive Clinical <br class="mobile-break">
+            Psychology Lab
+        </h1>
+    </div>
+</div>
+
+<!-- ===== PC 메뉴 ===== -->
+<nav class="desktop-menu d-none d-lg-block">
+    <div class="container">
+        <ul class="nav justify-content-center py-3">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   role="button"
+                   data-bs-toggle="dropdown">
+                   Home 
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'home:about' %}">About us</a></li>
+                    <li><a class="dropdown-item" href="{% url 'home:contact' %}">Contact</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   role="button"
+                   data-bs-toggle="dropdown">
+                   Projects
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'projects:research_projects' %}">Research Projects</a></li>
+                    <li><a class="dropdown-item" href="{% url 'projects:social_projects' %}">Social Projects</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'publication:publication_list' %}">Publications</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   role="button"
+                   data-bs-toggle="dropdown">
+                   People
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'people:director' %}">Lab director</a></li>
+                    <li><a class="dropdown-item" href="{% url 'people:members' %}">Lab members</a></li>
+                    <li><a class="dropdown-item" href="{% url 'people:alumni' %}">Lab alumni</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   role="button"
+                   data-bs-toggle="dropdown">
+                   Board
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'board:notice_list' %}">Notice & News</a></li>
+                    <li><a class="dropdown-item" href="{% url 'board:column_list' %}">Columns</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 모바일 Offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+        <h5>Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <ul class="nav flex-column">
+
+            <!-- Home 메뉴 -->
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center"
+                   data-bs-toggle="collapse"
+                   href="#homeSubmenu"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="homeSubmenu">
+                   Home
+                   <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+                </a>
+                <ul class="nav flex-column collapse ps-3" id="homeSubmenu">
+                    <div class="d-flex flex-column">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home:contact' %}">Contact</a></li>
+                    </div>
+                </ul>
+            </li>
+
+            <!-- Projects 아코디언 -->
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center"
+                   data-bs-toggle="collapse"
+                   href="#projectsSubmenu"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="projectsSubmenu">
+                   Projects
+                   <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+                </a>
+                <ul class="nav flex-column collapse ps-3" id="projectsSubmenu">
+                    <div class="d-flex flex-column">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'projects:research_projects' %}">Research Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'projects:social_projects' %}">Social Projects</a></li>
+                    </div>
+                </ul>
+            </li>
+
+            <!-- Publications 메뉴 -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'publication:publication_list' %}">Publications</a>
+            </li>
+
+            <!-- People 아코디언 -->
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center"
+                   data-bs-toggle="collapse"
+                   href="#peopleSubmenu"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="peopleSubmenu">
+                   People
+                   <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+                </a>
+                <ul class="nav flex-column collapse ps-3" id="peopleSubmenu">
+                    <div class="d-flex flex-column">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'people:director' %}">Lab Directors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'people:members' %}">Lab Members</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'people:alumni' %}">Lab Alumni</a></li>
+                    </div>
+                </ul>
+            </li>
+
+            <!-- Board 아코디언 -->
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center"
+                   data-bs-toggle="collapse"
+                   href="#boardSubmenu"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="boardSubmenu">
+                   Board
+                   <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+                </a>
+                <ul class="nav flex-column collapse ps-3" id="boardSubmenu">
+                    <div class="d-flex flex-column">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'board:notice_list' %}">Notice & News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'board:column_list' %}">Column</a></li>
+                    </div>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- FontAwesome CDN (아이콘 사용) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script>
+    // 모바일 아코디언 화살표 토글
+    document.querySelectorAll('.toggle-icon').forEach(icon => {
+        const collapseEl = icon.closest('li').querySelector('.collapse');
+        collapseEl.addEventListener('show.bs.collapse', () => {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        });
+        collapseEl.addEventListener('hide.bs.collapse', () => {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        });
+    });
+</script>
+
+<style>
+    .offcanvas-body .collapse {
+        transition: none !important; 
+    }
+</style>
+
+{% block content %}
+{% endblock %}
+
+
+<footer class="footer mt-auto">
+    © Positive Clinical Psychology Lab
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

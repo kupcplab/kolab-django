@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4 py-md-5">
+
+    <br class="mobile-delete">
+    
+    <!-- page title -->
+    <div class="text-center mb-4 mb-md-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Contact
+        </h2>
+    </div>
+
+    <!-- Google Map -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 col-md-10">
+            <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                <iframe
+                    src="https://www.google.com/maps?q=고려대학교 법학관 구관&output=embed"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+
+                    <h5 class="fw-bold mb-3">Address</h5>
+                    <p class="mb-4">
+                        (02841) 서울시 성북구 안암로 145 인문계 캠퍼스 법학관 구관 303호<br><br>
+                        Room 303, Korea University Law Building (Old),<br>
+                        145 Anam-ro, Seongbuk-gu, Seoul 02841, Republic of Korea
+                    </p>
+
+                    <h5 class="fw-bold mb-3">Contact Information</h5>
+                    <p class="mb-2">
+                        E-mail: elip@korea.ac.kr
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

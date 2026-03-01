@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-4 py-md-5">
+
+    <br class="mobile-delete">
+
+    <!-- page title -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Notice & News
+        </h2>
+    </div>
+
+    <div class="container pt-4 pb-4 notice-detail-wrapper">
+
+        <!-- notice title -->
+        <div class="text-center mb-2">
+            <h3 class="fw-bold text-center project-title mb-2 mb-md-3">
+                {{ notice.title }}
+            </h3>
+            <p class="text-muted small">
+                작성자: {{ notice.author.get_full_name|default:notice.author.username }} |
+                {{ notice.created_at|date:"Y-m-d H:i" }}
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- content -->
+        <div class="notice-content">
+            {{ notice.content|safe }}
+        </div>
+
+        <!-- photo -->
+        {% if notice.photo %}
+            <div class="text-center mb-4">
+                <img src="{{ notice.photo.url }}" alt="공지 이미지" class="img-fluid rounded">
+            </div>
+        {% endif %}
+
+        <!-- attachment file -->
+        {% if notice.file %}
+            <div class="mb-4 attachment-area"> <strong>첨부 파일:</strong>
+                <a href="{{ notice.file.url }}" target="_blank">{{ notice.file.name }}</a>
+            </div>
+        {% endif %}
+
+        <!-- list button -->
+        <div class="text-end">
+            {% url 'board:notice_list' as notice_list_url %}
+            <button class="btn btn-dark board-btn" onclick="location.href='{{ notice_list_url }}'">
+                목록
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

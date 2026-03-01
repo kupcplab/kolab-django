@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4 py-md-5">
+
+    <br class="mobile-delete">
+    
+    <!-- page title -->
+    <div class="text-center mb-4 mb-md-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Social Projects
+        </h2>
+    </div>
+
+    {% for project in socialproject_list %}
+        <div class="row justify-content-center mb-2 mb-md-6">
+
+            <!-- project title -->
+            <h3 class="fw-bold text-center project-title mb-3 mb-md-4">
+                {{ project.title }}
+            </h3>
+
+            <!-- image -->
+            {% if project.photo %}
+            <div class="text-center col-11 col-md-8 col-lg-7 mb-3 mb-md-4">
+                <img src="{{ project.photo.url }}"
+                     class="img-fluid rounded shadow-sm"
+                     style="max-width: 100%; height: auto;">
+            </div>
+            {% endif %}
+
+            <!-- url -->
+            {% if project.url %}
+            <div class="text-center mb-4">
+                <a href="{{ project.url }}"
+                target="_blank"
+                class="btn btn-primary rounded-pill px-4 py-2">
+                    {{ project.button_label }}
+                </a>
+            </div>
+            {% endif %}
+
+            <!-- description -->
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-10 col-lg-9">
+                    <p class="description-text">{{ project.description }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% if not forloop.last %}
+        <hr class="my-4 my-md-5"
+            style="margin: 0 auto 2.5rem auto;">
+        {% endif %}
+
+    {% empty %}
+        <p class="description-text text-center">현재 등록된 프로젝트가 없습니다.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

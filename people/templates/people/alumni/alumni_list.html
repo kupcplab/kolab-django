@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-4 py-md-5">
+
+    <br class="mobile-delete">
+    
+    <!-- page title -->
+    <div class="text-center mb-4 mb-md-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Lab Alumni
+        </h2>
+    </div>
+
+    <!-- ================= PhD ================= -->
+    <div class="mb-5 mb-md-6">
+        <hr class="my-4 my-md-5">
+        <h3 class="fw-bold text-center degree-title mb-4 mb-md-5">
+            Ph.D. Students
+        </h3>
+
+        {% for member in phds_list %}
+        <div class="row justify-content-center px-3 px-md-0 mb-4">
+            <div class="col-12 col-md-10 col-lg-8">
+
+                <div class="row gx-5">
+
+                    {% if member.photo %}
+                    <div class="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
+                        <div class="member-photo-wrapper mx-auto mx-md-0">
+                            <img src="{{ member.photo.url }}"
+                                class="img-fluid rounded shadow-sm"
+                                alt="{{ member.name }}">
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="col-12 col-md-8">
+                        <h4 class="member-name text-center text-md-start">{{ member.name }}</h4>
+                        <p class="introduction-text">{{ member.introduction }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        {% if not forloop.last %}
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-6">
+                <hr class="member-divider">
+            </div>
+        </div>
+        {% endif %}
+
+        {% empty %}
+        <p class="introduction-text text-center">현재 등록된 박사과정 졸업생이 없습니다.</p>
+        {% endfor %}
+    </div>
+
+    <!-- ================= Masters ================= -->
+    <div class="mb-5 mb-md-6">
+        <hr class="my-4 my-md-5">
+        <h3 class="fw-bold text-center degree-title mb-4 mb-md-5">
+            Master's Students
+        </h3>
+
+        {% for member in masters_list %}
+        <div class="row justify-content-center px-3 px-md-0 mb-4">
+            <div class="col-12 col-md-10 col-lg-8">
+
+                <div class="row gx-5">
+
+                    {% if member.photo %}
+                    <div class="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
+                        <div class="member-photo-wrapper mx-auto mx-md-0">
+                            <img src="{{ member.photo.url }}"
+                                class="img-fluid rounded shadow-sm"
+                                alt="{{ member.name }}">
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="col-12 col-md-8">
+                        <h4 class="member-name text-center text-md-start">{{ member.name }}</h4>
+                        <p class="introduction-text">{{ member.introduction }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        {% if not forloop.last %}
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-6">
+                <hr class="member-divider">
+            </div>
+        </div>
+        {% endif %}
+
+        {% empty %}
+        <p class="introduction-text text-center">현재 등록된 석사과정 졸업생이 없습니다.</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

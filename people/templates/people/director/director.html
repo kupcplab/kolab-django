@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4 py-md-5">
+
+    <br class="mobile-delete">
+    
+    <!-- page title -->
+    <div class="text-center mb-4 mb-md-5">
+        <h2 class="fw-bold display-6 display-md-4">
+            Lab Director
+        </h2>
+    </div>
+
+    {% if director %}
+    <!-- 상단: 사진 + 기본 정보 -->
+    <div class="row justify-content-center mb-2 mb-md-5">
+
+        <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7">
+
+            <div class="row justify-content-center align-items-md-end gx-4">
+
+                <!-- 사진 -->
+                {% if director.photo %}
+                <div class="col-auto mb-4 mb-md-0">
+                    <div class="photo-wrapper">
+                        <img src="{{ director.photo.url }}"
+                            class="rounded shadow-sm"
+                            alt="director photo">
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- 정보 -->
+                <div class="col-12 col-md-auto text-center text-md-start">
+                    <h4 class="director-name">
+                        고영건
+                    </h4>
+
+                    <p class="director-title mb-3">
+                        고려대학교 심리학부 교수
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- 하단: Introduction -->
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-10 col-lg-9">
+            <p class="description-text">{{ director.introduction }}</p>
+        </div>
+    </div>
+
+    {% else %}
+        <p class="text-center text-muted">
+            내용이 아직 등록되지 않았습니다.
+        </p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
