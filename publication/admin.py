@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Publication
+from .models import Publication, Book
 
-@admin.register(Publication)
-class PublicationAdmin(admin.ModelAdmin):
-    list_display = ['id', 'created_at', 'updated_at']
+admin.site.register(Publication)
+admin.site.register(Book)
