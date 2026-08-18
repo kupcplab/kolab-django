@@ -1,0 +1,326 @@
+{% load static %}
+{# Meta4U 소개 오버레이 — {% block content %} 안 맨 아래에 include 하세요 #}
+<div class="m4u-overlay m4u-scope" id="m4uOverlay" role="dialog" aria-modal="true" aria-labelledby="m4uDialogTitle" aria-hidden="true">
+  <div class="m4u-scrim" data-m4u-close></div>
+
+  <div class="m4u-shell">
+    <h2 id="m4uDialogTitle" class="m4u-sr">Meta4U 프로젝트 소개</h2>
+
+    <!-- 상단바 -->
+    <div class="m4u-topbar">
+      <div class="m4u-brand">
+        <span class="m4u-wordmark">Meta<em>4</em>U</span>
+        <span class="m4u-brand-sep"></span>
+        <span class="m4u-brand-tag">AI × Metaverse × Psychological Care</span>
+      </div>
+      <div class="m4u-topbar-right">
+        <span class="m4u-counter" id="m4uCounter" aria-live="polite"><b>01</b> / 07</span>
+        <button type="button" class="m4u-close" data-m4u-close aria-label="Meta4U 소개 닫기">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="m4u-body">
+      <!-- 좌측 세로 내비게이션 -->
+      <nav class="m4u-rail" id="m4uRail" aria-label="Meta4U 화면 이동"></nav>
+
+      <div class="m4u-stagewrap">
+      <button type="button" class="m4u-arrow m4u-prev" id="m4uPrev" aria-label="이전 화면">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="m4u-arrow m4u-next" id="m4uNext" aria-label="다음 화면">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- 무대 -->
+      <div class="m4u-stage" id="m4uStage">
+        <div class="m4u-stage-inner" id="m4uInner">
+
+          <!-- ─────────── PAGE 1 ─────────── -->
+          <section class="m4u-slide is-active" data-title="소개" aria-label="1 / 7 Meta4U 소개">
+            <div class="m4u-inner">
+              <div class="m4u-2col m4u-anim">
+                <div class="m4u-col-text">
+                  <p class="m4u-eyebrow">01 — Overview</p>
+                  <h1 class="m4u-hero-title">Meta4U</h1>
+                  <p class="m4u-hero-sub">AI × Metaverse × Psychological Care</p>
+                  <p class="m4u-lead"><strong>AI와 메타버스를 활용하여 심리평가, 심리상담 및 마인드 피트니스 서비스를 제공하는 디지털 헬스케어·마인드케어 플랫폼</strong></p>
+                  <p class="m4u-p">Meta4U는 AI와 메타버스 기술을 심리서비스에 접목하여, 기존의 대면 중심 심리케어가 가진 한계를 확장하고 새로운 형태의 심리평가·상담·훈련 환경을 제공합니다.</p>
+                  <p class="m4u-p">메타버스 기반의 익명 심리상담과 AI 기반 행동·표정·음성·언어 분석을 결합하여 심리서비스의 접근성을 높이고, 축적된 데이터를 바탕으로 보다 개인화된 심리케어를 제공하는 것을 목표로 합니다.</p>
+                </div>
+                <div class="m4u-col-media">
+                  <div class="m4u-hero-media">
+                    <img src="{% static 'meta4u/img/meta4u-hero.jpg' %}" alt="Meta4U — Metaverse Therapy for You 프로젝트 대표 이미지">
+                  </div>
+                </div>
+              </div>
+
+              <div class="m4u-features m4u-anim">
+                <div class="m4u-feature">
+                  <div class="m4u-feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></div>
+                  <h4>접근성</h4>
+                  <p>시간과 장소의 제약을 넘어 보다 편리하게 심리서비스를 이용할 수 있는 환경을 제공합니다.</p>
+                </div>
+                <div class="m4u-feature">
+                  <div class="m4u-feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M9 10v1M15 10v1M9.5 14.5c1.4 1.1 3.6 1.1 5 0"/></svg></div>
+                  <h4>객관화</h4>
+                  <p>AI와 Human Factor 기술로 행동·얼굴표정·음성·언어 데이터를 분석합니다.</p>
+                </div>
+                <div class="m4u-feature">
+                  <div class="m4u-feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-4.5 3 2.5L20 7"/></svg></div>
+                  <h4>데이터 기반 피드백</h4>
+                  <p>평가 결과, 상담·훈련 과정, 이용 및 만족도 데이터를 분석해 개인에게 맞는 피드백을 제공합니다.</p>
+                </div>
+                <div class="m4u-feature">
+                  <div class="m4u-feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8l-9 4.5L3 8l9-4.5Z"/><path d="M3.5 12.2 12 16.5l8.5-4.3M3.5 16.2 12 20.5l8.5-4.3"/></svg></div>
+                  <h4>다중체험 훈련·실습</h4>
+                  <p>가상환경에서 상담·심리치료를 실습하고 실시간 모니터링과 코칭으로 교육에 활용합니다.</p>
+                </div>
+                <div class="m4u-feature">
+                  <div class="m4u-feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 4.7 4.6 1.8-4.6 1.8L12 16.5l-1.9-4.7L5.5 10l4.6-1.8L12 3.5Z"/><path d="M18 16l.8 2 2.2.8-2.2.8-.8 2-.8-2-2.2-.8 2.2-.8.8-2Z"/></svg></div>
+                  <h4>Fun Care</h4>
+                  <p>메타버스와 Gamification으로 심리훈련을 능동적이고 흥미롭게 경험할 수 있습니다.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 2 ─────────── -->
+          <section class="m4u-slide" data-title="공간" aria-label="2 / 7 Meta4U 공간">
+            <div class="m4u-inner">
+              <div class="m4u-head-center m4u-anim">
+                <p class="m4u-eyebrow">02 — Virtual Campus</p>
+                <h2 class="m4u-h2">Meta4U 공간 둘러보기</h2>
+                <p class="m4u-lead">Meta4U에 입장하면 목적과 기능에 따라 구성된 다양한 가상공간을 탐색할 수 있습니다. 각 공간은 심리상담과 정보 제공, 심리역량 증진, 상담 실습 및 교육 등 서로 다른 심리서비스 경험을 제공하도록 구성되어 있습니다.</p>
+              </div>
+              <div class="m4u-spaces m4u-anim">
+                <div class="m4u-space">
+                  <img src="{% static 'meta4u/img/meta4u-building-counseling.jpg' %}" alt="Meta4U 상담동 외관">
+                  <span class="m4u-space-name"><b>상담동</b><i>01</i></span>
+                </div>
+                <div class="m4u-space">
+                  <img src="{% static 'meta4u/img/meta4u-building-info.jpg' %}" alt="Meta4U 정보동 외관">
+                  <span class="m4u-space-name"><b>정보동</b><i>02</i></span>
+                </div>
+                <div class="m4u-space">
+                  <img src="{% static 'meta4u/img/meta4u-building-growth.jpg' %}" alt="Meta4U 증진동 외관">
+                  <span class="m4u-space-name"><b>증진동</b><i>03</i></span>
+                </div>
+                <div class="m4u-space">
+                  <img src="{% static 'meta4u/img/meta4u-building-practice.jpg' %}" alt="Meta4U 실습동 외관">
+                  <span class="m4u-space-name"><b>실습동</b><i>04</i></span>
+                </div>
+                <div class="m4u-space">
+                  <img src="{% static 'meta4u/img/meta4u-building-education.jpg' %}" alt="Meta4U 교육동 외관">
+                  <span class="m4u-space-name"><b>교육동</b><i>05</i></span>
+                </div>
+              </div>
+              <p class="m4u-note m4u-anim" style="text-align:center;margin-top:22px;">각 공간의 상세 페이지는 준비 중입니다.</p>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 3 ─────────── -->
+          <section class="m4u-slide" data-title="아바타" aria-label="3 / 7 3D 아바타">
+            <div class="m4u-inner">
+              <div class="m4u-2col m4u-flip m4u-anim">
+                <div class="m4u-col-text">
+                  <p class="m4u-eyebrow">03 — 3D Avatar</p>
+                  <h2 class="m4u-h2">나를 대신해 상담에 참여하는 3D 아바타</h2>
+                  <p class="m4u-p">Meta4U에서는 사용자가 3D 아바타를 통해 가상공간에 참여합니다. 실제 모습을 그대로 노출하지 않고 아바타로 상호작용할 수 있어, 메타버스 환경에서 보다 편안하게 상담과 다양한 활동에 참여할 수 있습니다.</p>
+                  <div class="m4u-stats">
+                    <div class="m4u-stat"><b>8종</b><span>남성형 캐릭터</span></div>
+                    <div class="m4u-stat"><b>8종</b><span>여성형 캐릭터</span></div>
+                    <div class="m4u-stat"><b>7종</b><span>감정 표현</span></div>
+                  </div>
+                  <p class="m4u-chip-label">아바타가 표현하는 7가지 감정</p>
+                  <div class="m4u-chips">
+                    <span class="m4u-chip">공포</span><span class="m4u-chip">기쁨</span><span class="m4u-chip">놀람</span><span class="m4u-chip">무감정</span><span class="m4u-chip">슬픔</span><span class="m4u-chip">역겨움</span><span class="m4u-chip">화남</span>
+                  </div>
+                  <p class="m4u-p" style="margin-top:18px;">아바타는 단순히 사용자의 위치만 나타내는 캐릭터가 아니라 상담 과정에서 나타나는 정서적 상호작용을 표현합니다. 상담자 역시 3D 아바타로 상담 공간에 참여하며, 일반 사용자 아바타와 상담자 역할의 아바타를 구분하여 표현할 수 있습니다.</p>
+                </div>
+                <div class="m4u-col-media">
+                  <div class="m4u-avatar-stack">
+                    <figure class="m4u-figure">
+                      <img src="{% static 'meta4u/img/meta4u-avatar-male.jpg' %}" alt="남성형 아바타 — 프로필 이미지, 캐릭터 전신, 상담사 캐릭터 전신">
+                      <figcaption class="m4u-figcap">남성형(Man) 아바타 — 프로필 이미지 / 캐릭터 전신 / 상담사 전신</figcaption>
+                    </figure>
+                    <figure class="m4u-figure">
+                      <img src="{% static 'meta4u/img/meta4u-avatar-female.jpg' %}" alt="여성형 아바타 — 프로필 이미지, 캐릭터 전신, 상담사 캐릭터 전신">
+                      <figcaption class="m4u-figcap">여성형(Woman) 아바타 — 프로필 이미지 / 캐릭터 전신 / 상담사 전신</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 4 ─────────── -->
+          <section class="m4u-slide" data-title="상담 시스템" aria-label="4 / 7 메타버스 기반 심리상담 시스템">
+            <div class="m4u-inner">
+              <div class="m4u-head-center m4u-anim">
+                <p class="m4u-eyebrow">04 — Counseling System</p>
+                <h2 class="m4u-h2">가상공간에서 이루어지는 심리상담</h2>
+                <p class="m4u-lead">Meta4U의 상담 공간에서는 개인상담과 집단상담을 진행할 수 있으며, 상담 과정에서 나타나는 다양한 행동 및 의사소통 정보를 함께 활용할 수 있습니다.</p>
+              </div>
+              <div class="m4u-grid4 m4u-anim">
+                <article class="m4u-func">
+                  <div class="m4u-func-fig"><img src="{% static 'meta4u/img/meta4u-individual-counseling.jpg' %}" alt="개인상담 화면 — 얼굴표정·음성·언어 정보 활용"></div>
+                  <div class="m4u-func-body">
+                    <span class="m4u-func-no">01</span>
+                    <h4>개인상담<em>얼굴표정·음성·언어 정보 활용</em></h4>
+                    <p>상담자와 내담자가 1:1로 대화하며, 내담자의 얼굴표정·음성·언어 정보를 함께 분석합니다. 이 정보는 상담자의 임상적 판단을 대신하는 것이 아니라 상담 과정을 다각도로 이해하기 위한 보조 데이터로 활용됩니다.</p>
+                  </div>
+                </article>
+                <article class="m4u-func">
+                  <div class="m4u-func-fig"><img src="{% static 'meta4u/img/meta4u-individual-gaze.jpg' %}" alt="개인상담 화면 — 카메라 응시 정보 확인"></div>
+                  <div class="m4u-func-body">
+                    <span class="m4u-func-no">02</span>
+                    <h4>개인상담<em>카메라 응시 정보 확인</em></h4>
+                    <p>내담자가 카메라를 응시하는 정도와 그 변화를 확인할 수 있습니다. 상담 중 나타나는 시선 및 참여 행동의 변화를 하나의 행동 데이터로 기록하고 상담 과정과 함께 살펴봅니다.</p>
+                  </div>
+                </article>
+                <article class="m4u-func">
+                  <div class="m4u-func-fig"><img src="{% static 'meta4u/img/meta4u-group-participants.jpg' %}" alt="집단상담 화면 — 참여자 확인"></div>
+                  <div class="m4u-func-body">
+                    <span class="m4u-func-no">03</span>
+                    <h4>집단상담<em>참여자 확인</em></h4>
+                    <p>하나의 가상 상담실에 여러 내담자와 상담자가 함께 입장하여 집단상담을 진행합니다. 상담자는 화면에서 집단 구성원을 확인하고 각 참여자의 상담 참여 상황을 함께 살펴볼 수 있습니다.</p>
+                  </div>
+                </article>
+                <article class="m4u-func">
+                  <div class="m4u-func-fig"><img src="{% static 'meta4u/img/meta4u-group-emotion.jpg' %}" alt="집단상담 화면 — 얼굴표정·음성·언어 정보 활용"></div>
+                  <div class="m4u-func-body">
+                    <span class="m4u-func-no">04</span>
+                    <h4>집단상담<em>얼굴표정·음성·언어 정보 활용</em></h4>
+                    <p>집단상담에서도 참여자들의 얼굴표정·음성·언어 정보를 활용합니다. 집단 전체의 상호작용뿐 아니라 각 참여자가 상담 과정에서 보이는 반응과 변화도 함께 살펴볼 수 있습니다.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 5 ─────────── -->
+          <section class="m4u-slide" data-title="연구 활용" aria-label="5 / 7 연구에서의 활용">
+            <div class="m4u-inner">
+              <div class="m4u-2col m4u-anim">
+                <div class="m4u-col-text">
+                  <p class="m4u-eyebrow">05 — Research Platform</p>
+                  <h2 class="m4u-h2">상담과정을 데이터로 연구하다</h2>
+                  <p class="m4u-p">Meta4U는 상담을 제공하는 플랫폼인 동시에 <strong>심리상담 과정에서 발생하는 다양한 데이터를 연구할 수 있는 연구환경</strong>으로 활용될 수 있습니다.</p>
+                  <p class="m4u-p">기존 상담 연구는 주로 상담 전후의 자기보고식 설문이나 증상 점수로 효과를 평가해 왔습니다. Meta4U에서는 이에 더해 상담이 진행되는 동안의 행동 및 정서 데이터를 시간의 흐름에 따라 기록함으로써 <strong>상담 과정에서 실제로 어떤 변화가 나타나는지를 보다 세밀하게 탐색</strong>할 수 있습니다.</p>
+                  <div class="m4u-flow">
+                    <div class="m4u-flow-step">상담 진행</div>
+                    <div class="m4u-flow-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+                    <div class="m4u-flow-step">행동·정서<br>데이터 수집</div>
+                    <div class="m4u-flow-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+                    <div class="m4u-flow-step">시간에 따른<br>변화 분석</div>
+                    <div class="m4u-flow-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+                    <div class="m4u-flow-step is-accent">상담과정 및<br>효과 연구</div>
+                  </div>
+                  <p class="m4u-note" style="margin-top:18px;">상담 과정 연구, 개입 전후 변화 분석, 개인별 반응 패턴 탐색, 개인상담과 집단상담의 효과 검증 등 다양한 심리학 연구에 활용할 수 있습니다.</p>
+                </div>
+                <div class="m4u-col-media">
+                  <div class="m4u-charts">
+                    <figure class="m4u-chart" style="margin:0;"><img src="{% static 'meta4u/img/meta4u-research-emotion.jpg' %}" alt="회기 내 내담자 정서 변화 그래프"><figcaption>정서 변화 추적</figcaption></figure>
+                    <figure class="m4u-chart" style="margin:0;"><img src="{% static 'meta4u/img/meta4u-research-face.jpg' %}" alt="회기 내 내담자 얼굴 움직임 변화 그래프"><figcaption>얼굴 움직임 변화</figcaption></figure>
+                    <figure class="m4u-chart" style="margin:0;"><img src="{% static 'meta4u/img/meta4u-research-eye.jpg' %}" alt="회기 내 내담자 눈 움직임 변화 그래프"><figcaption>눈 움직임 변화</figcaption></figure>
+                    <figure class="m4u-chart" style="margin:0;"><img src="{% static 'meta4u/img/meta4u-research-mouth.jpg' %}" alt="회기 내 내담자 입 움직임 변화 그래프"><figcaption>입 움직임 변화</figcaption></figure>
+                  </div>
+                  <p class="m4u-note" style="margin-top:12px;">익명 상담 회기 중 내담자의 생체·행동 변화 추적 예시</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 6 ─────────── -->
+          <section class="m4u-slide" data-title="마인드 피트니스" aria-label="6 / 7 마인드 피트니스 훈련">
+            <div class="m4u-inner">
+              <div class="m4u-2col m4u-flip m4u-anim">
+                <div class="m4u-col-text">
+                  <p class="m4u-eyebrow">06 — Mind Fitness</p>
+                  <h2 class="m4u-h2">마음의 능력도 연습할 수 있습니다</h2>
+                  <p class="m4u-p">Meta4U의 <strong>증진동</strong>에서는 사용자가 직접 참여하며 심리적 역량을 연습할 수 있는 다양한 마인드 피트니스 훈련을 제공합니다. 심리학적 지식을 읽거나 듣는 방식이 아니라, 메타버스 환경에서 상황을 경험하고 직접 반응해보는 활동을 통해 반복적으로 심리적 기술을 연습합니다.</p>
+                  <p class="m4u-chip-label" style="margin-top:22px;">대표 사례 — 낙관성 훈련</p>
+                  <div class="m4u-steps">
+                    <div class="m4u-step"><div class="m4u-step-no">01</div><h5>상황</h5><p>예상하지 못한 실패나 어려움이 담긴 시나리오가 제시됩니다.</p></div>
+                    <div class="m4u-step"><div class="m4u-step-no">02</div><h5>생각</h5><p>그 상황에서 떠오른 자신의 생각을 살펴봅니다.</p></div>
+                    <div class="m4u-step"><div class="m4u-step-no">03</div><h5>재해석</h5><p>같은 상황을 보다 낙관적으로 바라볼 관점을 탐색합니다.</p></div>
+                    <div class="m4u-step"><div class="m4u-step-no">04</div><h5>작성</h5><p>탐색한 관점을 자신의 언어로 직접 문장으로 표현합니다.</p></div>
+                  </div>
+                  <div class="m4u-callout">“긍정적으로 생각해야 한다”는 지식을 배우는 것이 아니라, 실제 상황에서 보다 유연하고 낙관적인 사고방식을 <strong>직접 적용해보는 연습</strong>입니다.</div>
+                </div>
+                <div class="m4u-col-media">
+                  <div class="m4u-mf-grid">
+                    <div class="m4u-mf"><img src="{% static 'meta4u/img/meta4u-mind-fitness-gameroom-1.jpg' %}" alt="증진동 훈련 공간 — 심리역량 훈련 부스"></div>
+                    <div class="m4u-mf"><img src="{% static 'meta4u/img/meta4u-mind-fitness-gameroom-2.jpg' %}" alt="증진동 훈련 공간 — 주의력·감정인지 훈련 콘텐츠"></div>
+                    <div class="m4u-mf"><img src="{% static 'meta4u/img/meta4u-mind-fitness-booth.jpg' %}" alt="증진동 훈련 공간 — 정서조절·성장력·자기이해 훈련 부스"></div>
+                    <div class="m4u-mf"><img src="{% static 'meta4u/img/meta4u-mind-fitness-hall.jpg' %}" alt="증진동 강의 공간"></div>
+                  </div>
+                  <p class="m4u-note" style="margin-top:12px;">증진동에는 다양한 심리적 역량을 직접 연습할 수 있는 마인드 피트니스 콘텐츠가 구성되며, 메타버스와 Gamification 요소를 활용해 훈련 자체를 하나의 능동적인 경험으로 제공합니다.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─────────── PAGE 7 ─────────── -->
+          <section class="m4u-slide" data-title="명상실" aria-label="7 / 7 명상실">
+            <div class="m4u-inner">
+              <div class="m4u-2col m4u-anim">
+                <div class="m4u-col-text">
+                  <p class="m4u-eyebrow">07 — Meditation Room</p>
+                  <h2 class="m4u-h2">가상환경에서 경험하는 명상과 이완</h2>
+                  <p class="m4u-p">Meta4U의 명상실에서는 다양한 자연환경을 테마로 한 몰입형 영상을 활용하여 명상과 이완 활동을 경험할 수 있습니다. 실제 공간을 이동하지 않고도 가상환경 속에서 서로 다른 분위기의 자연 장면을 선택할 수 있습니다.</p>
+                  <p class="m4u-p">각기 다른 시각적·공간적 분위기의 환경에서 <strong>호흡, 주의집중, 명상 및 이완 활동</strong>을 수행하도록 구성되어 있습니다.</p>
+                  <p class="m4u-note">명상실은 자연 영상을 감상하는 공간이라기보다, 메타버스의 몰입감을 활용하여 잠시 외부 자극에서 벗어나 자신의 감각과 현재의 경험에 집중할 수 있도록 설계된 심리적 휴식 및 훈련 공간입니다.</p>
+                </div>
+                <div class="m4u-col-media">
+                  <div class="m4u-gallery-main">
+                    <img id="m4uGalleryImg" src="{% static 'meta4u/img/meta4u-meditation-landscape.jpg' %}" alt="명상실 테마 영상 — 광활하고 고요한 자연 풍경">
+                    <span class="m4u-gallery-cap" id="m4uGalleryCap">광활하고 고요한 자연 풍경</span>
+                  </div>
+                  <div class="m4u-thumbs" id="m4uThumbs">
+                    <button type="button" class="m4u-thumb is-current" data-src="{% static 'meta4u/img/meta4u-meditation-landscape.jpg' %}" data-cap="광활하고 고요한 자연 풍경" aria-label="테마 선택: 광활하고 고요한 자연 풍경">
+                      <img src="{% static 'meta4u/img/meta4u-meditation-landscape.jpg' %}" alt=""><b>자연 풍경</b>
+                    </button>
+                    <button type="button" class="m4u-thumb" data-src="{% static 'meta4u/img/meta4u-meditation-pond.jpg' %}" data-cap="연못과 수생식물이 펼쳐진 자연환경" aria-label="테마 선택: 연못과 수생식물이 펼쳐진 자연환경">
+                      <img src="{% static 'meta4u/img/meta4u-meditation-pond.jpg' %}" alt=""><b>연못</b>
+                    </button>
+                    <button type="button" class="m4u-thumb" data-src="{% static 'meta4u/img/meta4u-meditation-ocean.jpg' %}" data-cap="바닷속 산호초와 해양환경" aria-label="테마 선택: 바닷속 산호초와 해양환경">
+                      <img src="{% static 'meta4u/img/meta4u-meditation-ocean.jpg' %}" alt=""><b>바닷속</b>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="m4u-closing m4u-anim">
+                <p>Explore your mind in a new space.</p>
+                <button type="button" class="m4u-restart" id="m4uRestart">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+                  처음으로 돌아가기
+                </button>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /stage-inner -->
+      </div><!-- /stage -->
+        <span class="m4u-scrollhint" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          더 보기
+        </span>
+      </div><!-- /stagewrap -->
+    </div><!-- /body -->
+
+    <!-- 하단바 -->
+    <div class="m4u-footbar">
+      <button type="button" class="m4u-mbtn" id="m4uPrevM">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>이전
+      </button>
+      <div class="m4u-dots" id="m4uDots" aria-label="화면 바로가기"></div>
+      <button type="button" class="m4u-mbtn" id="m4uNextM">
+        다음<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div><!-- /shell -->
+</div><!-- /overlay -->
